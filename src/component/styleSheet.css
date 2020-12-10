@@ -8,4 +8,17 @@
 
 .text {
     text-align : left
+       
 }
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.back {
+}
+
+.continue {
+}
+

@@ -1,11 +1,13 @@
-import Burger from './component/Burger'
+import Example from './component/Example'
 import './App.css';
 
+
+
 function App() {
-  return (
-      <div className="App">
-          <Burger/>
-    </div>
+    return (
+        < div className="App" >
+            <Example/>
+        </div>
   );
 }
 
