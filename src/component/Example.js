@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
-import { Card, Button, Icon , Checkbox} from '@assenti/rui-components';
+import { Card, Button, Icon , Divider , Checkbox} from '@assenti/rui-components';
 import './styleSheet.css'
 import Logo from './Logo'
-function Example() {
+import Meat from './Meat'
+import Vegetable from './Vegetable'
+import Mushroom from './Mushroom'
+import Cheese from './Cheese'
+import Pepperoni from './Pepperoni'
+import Salad from './Salad'
+import Checkout from './CheckoutButton'
 
-    const [meat, setMeat] = useState(false);  
-    const [veg, setVeg] = useState(false);  
-    const [cheese, setCheese] = useState(false);  
-    const [pepperoni, setPepperoni] = useState(false);  
-    const [mushrooms, setMushrooms] = useState(false);
-    const [salad, setSalad] = useState(false);
-    const checkout = () => {
-        alert(`ThankYou`)
-    }
+function Example() {
+    const [varsalad, setSalad] = useState(false);
+    const [varmushrooms, setMushrooms] = useState(false);
+    const [varcheese, setCheese] = useState(false);
+    const [varmeat, setMeat] = useState(false);
+    const [varveg, setVeg] = useState(false);
+    const [varpepperoni, setPepperoni] = useState(false);
     return (
         <div>
             <Card className={"footer bg-yellow"}>
@@ -24,40 +28,50 @@ function Example() {
                 <h1 icon={<Icon name="chevron-down" />}>Make Your Own Burger </h1><Icon name="chevron-down" color="night" />
             </div>
                 <div className={"continue"}>
-                    <Button color="info" name="Checkout" icon={<Icon name="rocket" />} onClick={checkout}/>
+                    <Checkout/>
             </div> 
             </Card>
-            <div className={"footer  pa-50 bg-gray"}>
-                <div className={"back"}>
+            <Divider/>
+            
+                <div className={"pa-50 colorofitems"}>
                     <h2 >Choose items you want to add to your burger:</h2>
-                    <Checkbox
-                        checked={meat}
-                        label="Meat"
-                        onChange={() => setMeat(!meat)} />
-                    <Checkbox
-                        checked={veg}
-                        label="Vegetables"
-                        onChange={() => setVeg(!veg)} />
-                    <Checkbox
-                        checked={cheese}
-                        label="Cheese"
-                        onChange={() => setCheese(!cheese)} />
-                    <Checkbox
-                        checked={pepperoni}
-                        label="Pepperoni"
-                        onChange={() => setPepperoni(!pepperoni)} />
-                    <Checkbox
-                        checked={mushrooms}
-                        label="Mushrooms"
-                        onChange={() => setMushrooms(!mushrooms)} />
-                    <Checkbox
-                        checked={salad}
-                        label="Salad"
-                        onChange={() => setSalad(!salad)} />
-                   
+                <Checkbox
+                    checked={varmeat}
+                    label="Meat"
+                    onChange={() => setMeat(!varmeat)} />
+                <Checkbox
+                    checked={varveg}
+                    label="Vegetables"
+                    onChange={() => setVeg(!varveg)} />
+                <Checkbox
+                    checked={varcheese}
+                    label="Cheese"
+                    onChange={() => setCheese(!varcheese)} />
+                <Checkbox
+                    checked={varmushrooms}
+                    label="Mushrooms"
+                    onChange={() => setMushrooms(!varmushrooms)} />
 
+                <Checkbox
+                    checked={varpepperoni}
+                    label="Pepperoni"
+                    onChange={() => setPepperoni(!varpepperoni)} />
+                <Checkbox
+                    checked={varsalad}
+                    label="Salad"
+                    onChange={() => setSalad(!varsalad)} />
+                </div>
+            <Divider />
+            <div className={"footer colorofslider"}>
+                
+                <Meat isMeat={varmeat} />
+                <Vegetable isVeg={varveg}/>
+                <Cheese isCheese={varcheese}/>
+                <Mushroom isMushrooms={varmushrooms} />
+                <Pepperoni isPepperoni={varpepperoni}/>
+                <Salad isSalad={varsalad} />
             </div>
-        </div>
+        
         </div>
         )
 }
