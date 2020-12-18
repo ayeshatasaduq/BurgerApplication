@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
-import { Avatar, Checkbox } from '@assenti/rui-components';
+import { Card, Checkbox } from '@assenti/rui-components';
 import vege from './pictures/vegetables.jpg';
 
-function Vegetable(props) {
+function Vegetable() {
     
-    
+    const [varveg, setVeg] = useState(false);
+
     return (
 
-        <div>
-       
+        <Card style={{ width: '16%', height: '20%', backgroundColor: `#eee8aa`, margin: '20px' }}>
+            < img src={vege} width="150" height="100" />
+            <h2 style={{ alignContent: 'center' }}>Vegetables</h2>
+            <p style={{ textAlign: 'left' }}> Rs. 90/- </p>
 
-            {props.isVeg ? <Avatar
-                iconSize="50%"
-                img={vege} />
-                : null} 
-
-        </div>
+            <Checkbox
+                checked={varveg}
+                label="Vegetables"
+                onChange={() => setVeg(!varveg)} />
+        </Card>
       
     )
 

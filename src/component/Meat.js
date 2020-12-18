@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
-import { Avatar, Checkbox } from '@assenti/rui-components';
+import { Card, Checkbox } from '@assenti/rui-components';
 import mea from './pictures/meat.jpg';
-function Meat(props) {
-    
+function Meat() {
+    const [varmeat, setMeat] = useState(false);
     return (
 
-        <div>
-        
-        
-       
- {props.isMeat ? <Avatar
-                iconSize="50%"
-                img={mea} />
-                : null} 
+        <Card style={{
+            width: '16%', height: '20%', backgroundColor: `#ffdead` , margin: '20px' }}>
+            < img src={mea} width="150" height="100" />
+            <h2 style={{ alignContent: 'center' }}>Meat</h2>
+            <p style={{ textAlign: 'left' }}> Rs. 100/- </p>
 
-        </div>
+            <Checkbox
+                checked={varmeat}
+                label="Meat"
+                onChange={() => setMeat(!varmeat)} />
+        </Card>
   )  
     }
     
