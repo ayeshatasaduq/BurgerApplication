@@ -14,6 +14,7 @@
 .footer {
     display: flex;
     justify-content: space-between;
+    background-color: #f5f5dc
 }
 
 .back {
@@ -23,7 +24,7 @@
 }
 
 .colorofitems {
-    background-color: mediumaquamarine
+    background-color: #f0ffff
 }
 
 .colorofslider {

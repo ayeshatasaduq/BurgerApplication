@@ -9,29 +9,39 @@ import Cheese from './Cheese'
 import Pepperoni from './Pepperoni'
 import Salad from './Salad'
 import Checkout from './CheckoutButton'
+import { Switch, Route, Link } from "react-router-dom";
+import Login from './Login'
 
 function Example() {
-    const [price] = 0;
+    
     return (
         <div>
-            <Card className={"footer bg-yellow"}>
-            <div className={"back"}>
-            <Logo/>
-                <h2>myBurger</h2>
-            </div>
-            <div className="pa-20">
-                <h1 icon={<Icon name="chevron-down" />}>Make Your Own Burger </h1><Icon name="chevron-down" color="night" />
-            </div>
-                <div className={"continue"}>
-                    <Checkout/>
-            </div> 
+            
+            <Card className="navbar navbar-expand-lg navbar-light fixed-top" style={{
+                backgroundColor: "#f5f5dc" , 
+            }}>
+                <div className="container">
+                    <Logo />
+                    <Link className="navbar-brand" to={"/sign-in"}>Burger App</Link>
+
+                    <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+                        <ul className="navbar-nav ml-auto">
+                            
+                            <li className="nav-item">
+                                <Link className="nav-link" to={"/sign-in"}>Sign out</Link>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </Card>
-            <Divider/>
+
+
             
                 <div className={"pa-50 colorofitems footer"}>
                 <h2 >Choose items you want to add to your burger:</h2>
             </div>
             <div className={"pa-5 colorofitems footer"}>
+
                 <Cheese />
                 <Meat />
                 <Pepperoni />
@@ -42,7 +52,10 @@ function Example() {
             <Divider />
            
         
+    
+
         </div>
+       
         )
 }
 

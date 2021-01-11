@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState , useContext } from 'react';
 import { Button, Dialog, Icon } from '@assenti/rui-components';
 
 function Checkout() {
     const [dialog, setDialog] = useState(false);
-
+    
     const actionImitation = async () => {
         return new Promise(async (resolve) => {
             setTimeout(() => {
@@ -16,7 +16,7 @@ function Checkout() {
     return (
         <>
             <Button color="info" name="Checkout" icon={<Icon name="rocket" />} onClick={() => setDialog(true)} />
-           
+
             <Dialog
                 onCancel={() => setDialog(false)}
                 onConfirm={actionImitation}
@@ -26,6 +26,9 @@ function Checkout() {
                 visible={dialog}
                 title="Checkout"
                 description="Are you sure you want to confirm the order?" />
+      
+
+       
         </>
     )
 }

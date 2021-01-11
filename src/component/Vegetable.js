@@ -8,12 +8,12 @@ function Vegetable() {
 
     return (
 
-        <Card style={{ width: '16%', height: '20%', backgroundColor: `#eee8aa`, margin: '20px' }}>
+        <Card style={{ width: '16%', height: '20%', backgroundColor: `#f5f5dc`, margin: '20px' }}>
             < img src={vege} width="150" height="100" />
             <h2 style={{ alignContent: 'center' }}>Vegetables</h2>
             <p style={{ textAlign: 'left' }}> Rs. 90/- </p>
 
-            <Checkbox
+            <Checkbox fill
                 checked={varveg}
                 label="Vegetables"
                 onChange={() => setVeg(!varveg)} />

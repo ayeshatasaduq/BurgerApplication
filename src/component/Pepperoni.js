@@ -12,12 +12,12 @@ function Pepperoni() {
        
 
         <Card style={{
-            width: '16%', height: '20%', backgroundColor: `#ffefd5`, margin: '20px' }}>
+            width: '16%', height: '20%', backgroundColor: `#f5f5dc`, margin: '20px' }}>
                 < img src={pepper} width="150" height="100" />
                 <h2 style={{ alignContent: 'center' }}>Pepperoni</h2>
                 <p style={{ textAlign: 'left' }}> Rs. 65/- </p>
 
-                <Checkbox
+            <Checkbox fill
                     checked={varpepperoni}
                     label="Pepperoni"
                     onChange={() => setPepperoni(!varpepperoni)} />
