@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Button, Icon , Divider , Checkbox} from '@assenti/rui-components';
+import { Card, Divider } from '@assenti/rui-components';
 import './styleSheet.css'
 import Logo from './Logo'
 import Meat from './Meat'
@@ -9,8 +9,8 @@ import Cheese from './Cheese'
 import Pepperoni from './Pepperoni'
 import Salad from './Salad'
 import Checkout from './CheckoutButton'
-import { Switch, Route, Link } from "react-router-dom";
-import Login from './Login'
+import { Link } from "react-router-dom";
+
 
 function Example() {
     
@@ -34,8 +34,7 @@ function Example() {
                     </div>
                 </div>
             </Card>
-
-
+         
             
                 <div className={"pa-50 colorofitems footer"}>
                 <h2 >Choose items you want to add to your burger:</h2>
